@@ -1,0 +1,14 @@
+.carousel-control-next,
+.carousel-control-prev {
+  width: 72px;
+}
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 72px;
+  font-size: 3em;
+  background: rgba(255, 255, 255, 0.7);
+}

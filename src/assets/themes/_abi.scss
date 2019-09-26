@@ -1,0 +1,42 @@
+// Theme ABI
+.theme-abi {
+  $primary: #f49c00;
+  $secondary: #b11f24;
+  $text: #231f20;
+  
+  @include setTheme(
+    $body-bg: white,
+    $body-color: $text,
+
+    $header-bg: white,
+    $header-color:$text,
+
+    $title-primary: $primary,
+    $title-secondary: $primary,
+    $title-light: white,
+    $link: $text,
+    $label: $primary,
+
+    $button-primary: $primary,
+    $button-primary-color: white,
+    $button-secondary: $primary,
+    $button-secondary-color: white,
+    $button-success: $secondary,
+    $button-success-color: white,
+    $button-info: $secondary,
+    $button-info-color: white,
+    $button-outline: $primary,
+    
+    $gradient-from: darken($secondary, 10),
+    $gradient-to: lighten($secondary, 10),
+
+    $footer-bg: #f8f8f8,
+    $footer-color: $text,
+
+    $logo-height: 24px
+  );
+  // Extra
+  .navbar { box-shadow: 0 0 10px rgba(0,0,0,0.1) }
+  .card { border-radius: 0 !important }
+  .prefooter { margin-top: -40px }
+}

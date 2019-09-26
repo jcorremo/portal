@@ -1,0 +1,41 @@
+// Theme El Tiempo
+.theme-eltiempo {
+  $primary: #0c5991;
+  $secondary: #2d4254;
+  $third: #21d6ce;
+  
+  @include setTheme(
+    $body-bg: #f5f5f5,
+    $body-color: #1c1c1c,
+
+    $header-bg: $primary,
+    $header-color: white,
+
+    $title-primary: $primary,
+    $title-secondary: $third,
+    $title-light: white,
+    $link: $secondary,
+    $label: $third,
+
+    $button-primary: $third,
+    $button-primary-color: white,
+    $button-secondary: $third,
+    $button-secondary-color: white,
+    $button-success: $primary,
+    $button-success-color: white,
+    $button-info: $primary,
+    $button-info-color: white,
+    $button-outline: $secondary,
+    
+    $gradient-from: darken($primary, 10),
+    $gradient-to: lighten($primary, 10),
+
+    $footer-bg: $secondary,
+    $footer-color: white,
+
+    $logo-height: 48px
+  );
+  .prefooter {
+    color: $secondary;
+  }
+}

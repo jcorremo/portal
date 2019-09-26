@@ -1,0 +1,19 @@
+<div *ngIf="selected" id="added" class="alert alert-success mb-2" role="alert">
+  ¡{{selected}} ha sido agregado al carrito!
+</div>
+<div class="card shadow-sm">
+  <div class="row m-0 align-items-center">
+    <div class="col-sm-4 p-0">
+      <img src={{product?.image}} alt={{product?.description}} class="card-img">
+    </div>
+    <div class="col-sm-8 p-0">
+      <div class="card-body">
+        <h3 class="font-weight-light">{{product?.description}}</h3>
+        <h4 class="m-0">{{product?.price | currency:'COP':'$':'1.0':'es-CO'}}</h4>
+        <p class="mt-3 mb-0"><b>Envío gratis</b></p>
+        <p class="mb-3">{{product?.availability}} disponibles - Bogotá D.C.</p>
+        <button class="btn btn-primary" (click)="onClick()">Agregar al carrito</button>
+      </div>
+    </div>
+  </div>
+</div>

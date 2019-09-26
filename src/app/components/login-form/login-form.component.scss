@@ -1,0 +1,36 @@
+$primary: #A4BD32;
+$secondary: #ffb400;
+$height: 44px;
+
+// Form
+input {
+  height: $height;
+  border: 1px solid #a4a4a4;
+  border-radius: 8px;
+}
+.btn {
+  height: $height;
+  border-radius: $height / 2;
+  font-weight: bold;
+  &-google {
+    background: $secondary;
+    color: $primary;
+  }
+}
+.loader::before {
+  content: '';
+  display: inline-block;
+  margin-right: 0.5em;
+  width: 1em;
+  height: 1em;
+  vertical-align: middle;
+  border: 2px solid transparent;
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0)}
+  to { transform: rotate(360deg)}
+}

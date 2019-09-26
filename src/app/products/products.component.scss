@@ -1,0 +1,17 @@
+@media screen and (max-width: 575px) {
+  .f1:nth-child(2) {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .f2:nth-child(2) {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .f1:nth-child(3) {
+    display: none;
+  }
+}

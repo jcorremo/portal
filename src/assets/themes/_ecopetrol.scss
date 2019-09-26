@@ -1,0 +1,38 @@
+// Theme Ecopetrol
+.theme-ecopetrol {
+  $primary: #025449;
+  $secondary: #ccd400;
+  $orange: #F07B05;
+  
+  @include setTheme(
+    $body-bg: #f9f7f4,
+    $body-color: $primary,
+
+    $header-bg: $primary,
+    $header-color: white,
+
+    $title-primary: $primary,
+    $title-secondary: $orange,
+    $title-light: white,
+    $link: $primary,
+    $label: $orange,
+
+    $button-primary: $secondary,
+    $button-primary-color: $primary,
+    $button-secondary: $secondary,
+    $button-secondary-color: $primary,
+    $button-success: $primary,
+    $button-success-color: white,
+    $button-info: $secondary,
+    $button-info-color: $primary,
+    $button-outline: $primary,
+    
+    $gradient-from: $primary,
+    $gradient-to: lighten($primary, 10),
+
+    $footer-bg: $primary,
+    $footer-color: white,
+
+    $logo-height: 40px
+  )
+}

@@ -1,0 +1,116 @@
+$height: 44px;
+
+// Login left
+.logos img {
+  height: 60px;
+}
+.position-relative {
+  z-index: 1;
+}
+h1 {
+  font-size: 26px;
+  font-weight: 700;
+}
+.links {
+  border-top: 1px solid #fff;
+  text-align: center;
+  h4 {
+    font-size: 13px;
+  }
+}
+.btn {
+  padding: 0;
+  height: $height;
+  line-height: $height;
+  border-radius: $height / 2;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.carousel {
+  img {
+    width: 100%;
+  }
+}
+.carousel-indicators {
+  flex-direction: column;
+  margin-right: 0;
+  margin-left: 0;
+  top: 6px;
+  right: 6px;
+  bottom: auto;
+  left: auto;
+  li {
+    margin-bottom: 16px;
+    width: 12px;
+    height: 12px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    background: transparent;
+    opacity: 1;
+    &.active {
+      background: #fff;
+    }
+  }
+}
+
+// Right
+.login {
+  background: white;
+}
+h3 {
+  font-size: 24px;
+}
+a {
+  text-decoration: underline;
+}
+@media (min-width: 768px) {
+  .logos img {
+    height: 72px;
+  }
+}
+@media (min-width: 992px) {
+  h1 {
+    font-size: 36px;
+  }
+  .links {
+    text-align: left;
+    .col-4 {
+      display: flex;
+      align-items: center;
+    }
+    img {
+      margin-right: 1em;
+    }
+    h4 {
+      font-size: 20px;
+    }
+    span {
+      font-size: 12px;
+    }
+  }
+  .carousel {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    &-inner {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+    }
+    &-indicators {
+      top: 1em;
+      right: 2em;
+    }
+    img {
+      margin: auto;
+      width: 80%;
+    }
+  }
+  h3 {
+    font-size: 24px;
+    font-weight: 700;
+  }
+}

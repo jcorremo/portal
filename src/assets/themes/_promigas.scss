@@ -1,0 +1,38 @@
+// Theme Promigas
+.theme-promigas {
+  $primary: #6cb33e;
+  $secondary: #BFD635;
+  $third: #149a96;
+  
+  @include setTheme(
+    $body-bg: #f9f9f9,
+    $body-color: #444444,
+
+    $header-bg: white,
+    $header-color: $primary,
+
+    $title-primary: $primary,
+    $title-secondary: $secondary,
+    $title-light: white,
+    $link: $secondary,
+    $label: $third,
+
+    $button-primary: $primary,
+    $button-primary-color: white,
+    $button-secondary: $secondary,
+    $button-secondary-color: white,
+    $button-success: $primary,
+    $button-success-color: white,
+    $button-info: $primary,
+    $button-info-color: white,
+    $button-outline: $secondary,
+    
+    $gradient-from: darken($third, 10),
+    $gradient-to: lighten($third, 10),
+
+    $footer-bg: #E5E5E5,
+    $footer-color: #595959,
+
+    $logo-height: 70px
+  );
+}

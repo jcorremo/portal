@@ -1,0 +1,141 @@
+{
+  "themeId": "promigas",
+  "themes": [
+    {
+      "id": "abi",
+      "properties": {
+        "selector": "abi",
+        "name": "AB InBev",
+        "logo": "logo_abinbev.svg"
+      }
+    },
+    {
+      "id": "ath",
+      "properties": {
+        "selector": "ath",
+        "name": "A Toda Hora",
+        "logo": "logo_ath.png"
+      }
+    },
+    {
+      "id": "aval",
+      "properties": {
+        "selector": "aval",
+        "name": "Grupo Aval",
+        "logo": "logo_aval.png"
+      }
+    },
+    {
+      "id": "avvillas",
+      "properties": {
+        "selector": "av-villas",
+        "name": "Banco AV Villas",
+        "logo": "logo_avvillas.png"
+      }
+    },
+    {
+      "id": "bancobogota",
+      "properties": {
+        "selector": "banco-bogota",
+        "name": "Banco de Bogotá",
+        "logo": "logo_banco_bogota.png"
+      }
+    },
+    {
+      "id": "bancooccidente",
+      "properties": {
+        "selector": "banco-occidente",
+        "name": "Banco de Occidente",
+        "logo": "logo_banco_occidente.png"
+      }
+    },
+    {
+      "id": "bancopopular",
+      "properties": {
+        "selector": "banco-popular",
+        "name": "Banco Popular",
+        "logo": "logo_banco_popular.png"
+      }
+    },
+    {
+      "id": "claro",
+      "properties": {
+        "selector": "claro",
+        "name": "Claro",
+        "logo": "logo_claro.svg"
+      }
+    },
+    {
+      "id": "ecopetrol",
+      "properties": {
+        "selector": "ecopetrol",
+        "name": "Ecopetrol",
+        "logo": "logo_ecopetrol.png"
+      }
+    },
+    {
+      "id": "eltiempo",
+      "properties": {
+        "selector": "eltiempo",
+        "name": "El Tiempo",
+        "logo": "logo_eltiempo.png"
+      }
+    },
+    {
+      "id": "everis",
+      "properties": {
+        "selector": "everis",
+        "name": "everis",
+        "logo": "logo_everis.png"
+      }
+    },
+    {
+      "id": "porvenir",
+      "properties": {
+        "selector": "porvenir",
+        "name": "Porvenir",
+        "logo": "logo_porvenir.svg"
+      }
+    },
+    {
+      "id": "promigas",
+      "properties": {
+        "selector": "promigas",
+        "name": "Promigas",
+        "logo": "logo_promigas.jpg"
+      }
+    },
+    {
+      "id": "telefonica",
+      "properties": {
+        "selector": "telefonica",
+        "name": "Telefónica",
+        "logo": "logo_telefonica-blanco.png"
+      }
+    },
+    {
+      "id": "terpel",
+      "properties": {
+        "selector": "terpel",
+        "name": "Terpel",
+        "logo": "logo_terpel.jpg"
+      }
+    },
+    {
+      "id": "vanti",
+      "properties": {
+        "selector": "vanti",
+        "name": "Vanti",
+        "logo": "logo_vanti.jpg"
+      }
+    },   
+    {
+      "id": "PRUEBA QUE NO SE USA",
+      "properties": {
+        "selector": "vanti",
+        "name": "Vanti",
+        "logo": "logo_vanti.jpg"
+      }
+    }
+  ]
+}

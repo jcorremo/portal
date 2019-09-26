@@ -1,0 +1,27 @@
+.card {
+  background:white;
+  border: 0;
+  .row {
+    margin: 0;
+    padding: 0;
+  }
+}
+.description {
+  font-size: 18px;
+}
+.price {
+  margin: 0;
+  font-size: 18px;
+}
+.qt {
+  margin: 0;
+  span {
+    margin-right: .5em;
+  }
+}
+.btn {
+  padding: 0 1em;
+  height: 28px;
+  font-size: 14px;
+  border-radius: 14px;
+}

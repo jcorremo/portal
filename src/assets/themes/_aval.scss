@@ -1,0 +1,38 @@
+// Theme Aval
+.theme-aval {
+  $primary: #0067ac;
+  $secondary: #003464;
+  $third: #F6F6F6;
+  
+  @include setTheme(
+    $body-bg: $third,
+    $body-color: $secondary,
+
+    $header-bg: white,
+    $header-color: $primary,
+
+    $title-primary: $primary,
+    $title-secondary: $secondary,
+    $title-light: white,
+    $link: $secondary,
+    $label: $primary,
+
+    $button-primary: $primary,
+    $button-primary-color: white,
+    $button-secondary: $white,
+    $button-secondary-color: $secondary,
+    $button-success: $secondary,
+    $button-success-color: white,
+    $button-info: $primary,
+    $button-info-color: white,
+    $button-outline: $secondary,
+    
+    $gradient-from: darken($secondary, 10),
+    $gradient-to: lighten($secondary, 10),
+
+    $footer-bg: white,
+    $footer-color: #979797,
+
+    $logo-height: 60px
+  )
+}

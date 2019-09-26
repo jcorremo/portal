@@ -1,0 +1,37 @@
+// Theme terpel
+.theme-terpel {
+  $primary: #eb393a;
+  $secondary: #eeae1c;
+  
+  @include setTheme(
+    $body-bg: #f9f7f4,
+    $body-color: #545454,
+
+    $header-bg: white,
+    $header-color: adadad,
+
+    $title-primary: $primary,
+    $title-secondary: $secondary,
+    $title-light: white,
+    $link: $secondary,
+    $label: $secondary,
+
+    $button-primary: $primary,
+    $button-primary-color: white,
+    $button-secondary: $primary,
+    $button-secondary-color: white,
+    $button-success: $primary,
+    $button-success-color: white,
+    $button-info: $primary,
+    $button-info-color: white,
+    $button-outline: $secondary,
+    
+    $gradient-from: darken($secondary, 10),
+    $gradient-to: lighten($secondary, 10),
+
+    $footer-bg: white,
+    $footer-color: #adadad,
+
+    $logo-height: 48px
+  )
+}

@@ -1,0 +1,38 @@
+// Theme Banco de Occidente
+.theme-banco-occidente {
+  $primary: #008ACC;
+  $secondary: #f8ad3b;
+  $marine: #4F6FAC;
+  
+  @include setTheme(
+    $body-bg: #f1f1f1,
+    $body-color: $primary,
+
+    $header-bg: white,
+    $header-color:$primary,
+
+    $title-primary: $primary,
+    $title-secondary: $primary,
+    $title-light: white,
+    $link: $primary,
+    $label: $primary,
+
+    $button-primary: $primary,
+    $button-primary-color: white,
+    $button-secondary: white,
+    $button-secondary-color: $primary,
+    $button-success: $marine,
+    $button-success-color: white,
+    $button-info: $secondary,
+    $button-info-color: white,
+    $button-outline: $secondary,
+    
+    $gradient-from: darken($primary, 10),
+    $gradient-to: lighten($primary, 10),
+
+    $footer-bg: #001a4b,
+    $footer-color: white,
+
+    $logo-height: 60px
+  )
+}

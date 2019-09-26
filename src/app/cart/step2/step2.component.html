@@ -1,0 +1,68 @@
+<div class="mt-3 mb-3">
+  <app-steps active="2"></app-steps>
+</div>
+<div class="row mb-3 flex-column-reverse flex-lg-row">
+  <div class="col-lg-9">
+    <div class="card p-lg-3 pagos">
+      <h3 class="card-header border-0 bg-transparent title-primary">
+        Medios de pago
+      </h3>
+      <div class="card-body ">
+        <div class="row mb-5 text-center">
+          <div class="col-6 col-md-3 mb-5 mb-md-0">
+            <h6 class="label">Credito o débito</h6>
+            <img src="../../../assets/pago-cre-deb.svg" alt="Credito o débito">
+            <button class="btn btn-block btn-primary" (click)="pay()">Pagar</button>
+          </div>
+          <div class="col-6 col-md-3 mb-5 mb-md-0">
+            <h6 class="label">Paypal</h6>
+            <img src="../../../assets/pago-paypal.svg" alt="Paypal">
+            <button class="btn btn-block btn-primary" (click)="pay()">Pagar</button>
+          </div>
+          <div class="col-6 col-md-3">
+            <h6 class="label">PayU</h6>
+            <img src="../../../assets/pago-payu.svg" alt="PayU">
+            <button class="btn btn-block btn-primary" (click)="pay()">Pagar</button>
+          </div>
+          <div class="col-6 col-md-3">
+            <h6 class="label">PSE - Efecty</h6>
+            <img src="../../../assets/pago-pse.png" alt="PSE - Efecty" width="96">
+            <button class="btn btn-block btn-primary" (click)="pay()">Pagar</button>
+          </div>
+        </div>
+        <h4 class="mb-5 title-primary">Bancos</h4>
+        <div class="row text-center">
+          <div class="col-6 col-md-3 mb-5 mb-md-0">
+            <h6 class="label">Banco AV Villas</h6>
+            <img src="../../../assets/pago-avvillas.svg" alt="Banco AV Villas">
+            <button class="btn btn-block btn-primary" (click)="pay()">Pagar</button>
+          </div>
+          <div class="col-6 col-md-3 mb-5 mb-md-0">
+            <h6 class="label">Banco de Bogotá</h6>
+            <img src="../../../assets/pago-bogota.svg" alt="Banco de Bogotá">
+            <button class="btn btn-block btn-primary" (click)="pay()">Pagar</button>
+          </div>
+          <div class="col-6 col-md-3">
+            <h6 class="label">Banco de Occidente</h6>
+            <img src="../../../assets/pago-occidente.svg" alt="Banco de Occidente">
+            <button class="btn btn-block btn-primary" (click)="pay()">Pagar</button>
+          </div>
+          <div class="col-6 col-md-3">
+            <h6 class="label">Banco Popular</h6>
+            <img src="../../../assets/pago-popular.svg" alt="Banco Popular">
+            <button class="btn btn-block btn-primary" (click)="pay()">Pagar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-3 mb-3 mb-lg-0">
+    <app-cart-total></app-cart-total>
+  </div>
+</div>
+
+<app-pay-method></app-pay-method>
+
+<ng-template [ngIf]="loading">
+  <loader></loader>
+</ng-template>

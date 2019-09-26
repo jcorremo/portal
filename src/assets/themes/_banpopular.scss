@@ -1,0 +1,45 @@
+// Theme Banco Popular
+.theme-banco-popular {
+  $primary: #009A48;
+  $secondary: #F99B35;
+  $lemon: #81c341;
+  
+  @include setTheme(
+    $body-bg: #F9F9F9,
+    $body-color: #666666,
+
+    $header-bg: white,
+    $header-color:$secondary,
+
+    $title-primary: $primary,
+    $title-secondary: $lemon,
+    $title-light: white,
+    $link: $secondary,
+    $label: $lemon,
+
+    $button-primary: $primary,
+    $button-primary-color: white,
+    $button-secondary: $secondary,
+    $button-secondary-color: white,
+    $button-success: $lemon,
+    $button-success-color: white,
+    $button-info: $secondary,
+    $button-info-color: white,
+    $button-outline: $lemon,
+    
+    $gradient-from: $primary,
+    $gradient-to: lighten($primary, 10),
+
+    $footer-bg: transparent,
+    $footer-color: inherit,
+
+    $logo-height: 50px
+  );
+  // Custom
+  .footer {
+    border-top: 4px solid #BBBDC0;
+    h4 {
+      color: $primary;
+    }
+  }
+}

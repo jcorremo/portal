@@ -1,0 +1,40 @@
+// Theme Telefonica
+.theme-telefonica {
+  $primary: #0d3e52;
+  $secondary: #00c6da;
+  
+  $darkblue: #003245;
+  $bluestone: #005466;
+
+  @include setTheme(
+    $body-bg: #edf0f2,
+    $body-color: $primary,
+
+    $header-bg: $bluestone,
+    $header-color: white,
+
+    $title-primary: $primary,
+    $title-secondary: $bluestone,
+    $title-light: white,
+    $link: $secondary,
+    $label: $bluestone,
+
+    $button-primary: $secondary,
+    $button-primary-color: white,
+    $button-secondary: $secondary,
+    $button-secondary-color: white,
+    $button-success: $primary,
+    $button-success-color: white,
+    $button-info: $secondary,
+    $button-info-color: white,
+    $button-outline: $secondary,
+    
+    $gradient-from: $primary,
+    $gradient-to: lighten($primary, 10),
+
+    $footer-bg: $darkblue,
+    $footer-color: white,
+
+    $logo-height: 54px
+  )
+}

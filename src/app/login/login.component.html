@@ -1,0 +1,58 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-8 min-vh-100 p-3 px-lg-5 pb-lg-5 text-white d-flex flex-column bg-gradient">
+      <div class="logos position-relative">
+        <img src="../../assets/images/logo_everis.png" alt="Everis" height="72">
+      </div>
+      <h1 class="position-relative">Bienvenido al nuevo portal, donde lo importante eres tú.</h1>
+      <p class="d-none d-lg-block position-relative">Te presentamos el nuevo portal transaccional pensado para ti</p>
+      <!-- Carousel -->
+      <div id="carouselLogin" class="carousel my-auto slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li *ngFor="let image of images; let i = index" data-target="#carouselLogin" [attr.data-slide-to]="i" [class.active]="i === 0"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item" *ngFor="let image of images; let first = first" [class.active]="first">
+            <img src={{image}} alt="..." class="d-block">
+          </div>
+        </div>
+      </div>
+        <!-- End carousel -->
+      <div class="row mt-auto m-0 links py-3 position-relative">
+        <div class="col-4">
+          <img src="../../assets/icon-credit.svg" alt="Credito" >
+          <div>
+            <h4 class="m-0">Compra online</h4>
+            <!-- <span class="d-none d-lg-inline">Lorem, ipsum.</span> -->
+          </div>
+        </div>
+        <div class="col-4">
+          <img src="../../assets/icon-truck.svg" alt="Transporte" >
+          <div>
+            <h4 class="m-0">Entrega garantizada</h4>
+            <!-- <span class="d-none d-lg-inline">Lorem, ipsum.</span> -->
+          </div>
+        </div>
+        <div class="col-4">
+          <img src="../../assets/icon-pig.svg" alt="Ahorro">
+          <div>
+            <h4 class="m-0">Las mejores ofertas</h4>
+            <!-- <span class="d-none d-lg-inline">Lorem, ipsum.</span> -->
+          </div>
+        </div>
+      </div>
+      <a href="#loginSection" class="btn btn-primary d-lg-none">Ingresar</a>
+    </div>
+    <!-- Login -->
+    <div id="loginSection" class="col-lg-4 min-vh-100 p-3 p-lg-5 login">
+      <h2 class="mb-1 title-primary">{{ title }}</h2>
+      <h3 class="mb-3 title-secondary">Producto Digital</h3>
+      <p>Ingresa con tus datos a la Zona Transaccional, aquí puedes realizar tus pagos por internet y conocer los movimientos de tus productos bancarios.</p>
+      <login-form></login-form>
+      <!-- <button type="button" class="btn btn-google btn-block mb-3">Ingresar Google</button> -->
+      <div class="text-center">
+        <a href="" disabled (click)="createAccount($event)" class="link">Crear cuenta</a>
+      </div>
+    </div>
+  </div>
+</div>

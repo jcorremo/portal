@@ -1,0 +1,24 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: vs-aval
+spec:
+  hosts:
+  - "*"
+  gateways:
+  - gateway-aval
+  http:
+  - match:
+    - uri:
+        prefix: /test
+        rewrite:
+            uri: /
+    - route:
+      - destination:
+          host: portal
+          subset: v1
+        weight: 20
+      - destination:
+          host: portal
+          subset: v2
+        weight: 80

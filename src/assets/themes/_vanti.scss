@@ -1,0 +1,41 @@
+// Theme Vanti
+.theme-vanti {
+  $primary: #004165;
+  $secondary: #FFC734;
+  $third: #d3222a;
+  
+  @include setTheme(
+    $body-bg: #f3f5f5,
+    $body-color: #333333,
+
+    $header-bg: white,
+    $header-color: $primary,
+
+    $title-primary: $primary,
+    $title-secondary: $primary,
+    $title-light: white,
+    $link: $secondary,
+    $label: $primary,
+
+    $button-primary: $primary,
+    $button-primary-color: white,
+    $button-secondary: $secondary,
+    $button-secondary-color: primary,
+    $button-success: $primary,
+    $button-success-color: white,
+    $button-info: $third,
+    $button-info-color: white,
+    $button-outline: $third,
+    
+    $gradient-from: darken($primary, 10),
+    $gradient-to: lighten($primary, 10),
+
+    $footer-bg: #d9e3e8,
+    $footer-color: $primary,
+
+    $logo-height: 60px
+  );
+  .prefooter {
+    color: $primary;
+  }
+}

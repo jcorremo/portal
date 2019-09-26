@@ -1,0 +1,19 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: app-web
+  namespace: producto-digital
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: app-web
+    spec:
+      containers:
+      - name: app-web
+        image: gcr.io/arquitectura-digital-everis/app-web:TAG
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
+           

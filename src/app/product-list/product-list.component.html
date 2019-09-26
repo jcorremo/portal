@@ -1,0 +1,107 @@
+<div class="container">
+  <div class="d-flex align-items-center">
+    <h2 class="mt-3 mb-3 label-dark">Categoría </h2>
+    <button class="btn btn-sm btn-filters ml-auto d-md-none" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Ver filtros</button>
+  </div>
+  <div class="row">
+    <div class="col-md-4 col-lg-3 categorias">
+      <div id="collapseExample" class="collapse d-md-block">
+        <div class="card mb-3">
+          <div class="card-body" *ngIf="currentCategory?.url">
+            <h3 class="title-primary">{{currentCategory?.name}}</h3>
+            <p class="results mb-3">728 resultados</p>
+            <!-- <div class="form-group mb-3">
+              <label for="orderItems">Ordenar artículos</label>
+              <select class="form-control" id="orderItems" name="orderItems">
+                <option>Más relevantes</option>
+                <option>Precio menor</option>
+                <option>Precio mayor</option>
+              </select>
+            </div> -->
+            <h4 class="title-secondary">Categorias</h4>
+            <ul class="list-unstyled filtros">
+              <li>
+                <a class="link" [routerLink]="['/', productRouteName]">
+                  Ver todas
+                </a>
+              </li>
+              <li *ngFor="let category of categories">
+                <a class="link" [routerLink]="['/', category?.url]">
+                  {{category?.name}}
+                </a>
+              </li>
+            </ul>
+            <h4 class="title-secondary">
+              Precio
+              <button
+                class="btn clear"
+                *ngIf="queryParameters.price"
+                (click)="clearFilterData('price')">&times; Limpiar</button>
+            </h4>
+            <ul class="list-unstyled filtros">
+              <li>
+                <a class="link" [routerLink]="['/', currentCategory.url]"
+                  [queryParams]="setFilterData({ price: '0,100000' })">Hasta $100.000</a>
+              </li>
+              <li>
+                <a class="link" [routerLink]="['/', currentCategory.url]"
+                  [queryParams]="setFilterData({ price: '100000,500000'})">$100.000 a $500.000</a>
+              </li>
+              <li>
+                <a class="link" [routerLink]="['/', currentCategory.url]"
+                  [queryParams]="setFilterData({ price: '500000'})">Más de $500.000</a>
+              </li>
+            </ul>
+            <h4 class="title-secondary">
+              Disponibilidad
+              <button
+                class="btn clear"
+                *ngIf="queryParameters.available"
+                (click)="clearFilterData('available')">&times; Limpiar</button>
+            </h4>
+            <ul class="list-unstyled filtros">
+              <li>
+                <a class="link" [routerLink]="['/', currentCategory.url]"
+                  [queryParams]="setFilterData({ available: '0,5' })">0 - 5</a>
+              </li>
+              <li>
+                <a class="link" [routerLink]="['/', currentCategory.url]"
+                  [queryParams]="setFilterData({ available: '6,10' })">6 - 10</a>
+              </li>
+              <li>
+                <a class="link" [routerLink]="['/', currentCategory.url]"
+                  [queryParams]="setFilterData({ available: '11' })">11 +</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-8 col-lg-9">
+      <!-- Productos 15 x página -->
+      <ul class="list-unstyled">
+        <li *ngFor="let item of list" class="mb-2">
+          <app-card-product [product]="item"></app-card-product>
+        </li>
+        <li *ngIf="!list?.length">
+          <div class="card noitems">
+            <div class="card-body">
+              No se han encontrado productos que concuerden con su búsqueda
+            </div>
+          </div>
+        </li>
+      </ul>
+      <!-- Paginación -->
+      <!-- <nav>
+        <ul class="pagination justify-content-end">
+          <li class="page-item"><a class="page-link" href="#">Anterior</a></li>
+          <li class="page-item active"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item"><a class="page-link" href="#">Siguiente</a></li>
+        </ul>
+      </nav> -->
+    </div>
+  </div>
+</div>
+

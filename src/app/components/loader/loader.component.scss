@@ -1,0 +1,40 @@
+$size: 24px;
+$space: 5;
+$bg: white;
+$animation: pulse 1.2s linear infinite;
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.5);
+}
+// Loader styles
+.dot {
+  width: $size;
+  height: $size;
+  background: $bg;
+  border-radius: 50%;
+  animation: $animation;
+  opacity: 0;
+}
+.dot:nth-child(2) {
+  margin: 0 ($size / 2);
+  animation-delay: 0.3s;
+}
+.dot:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+// Animation
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+}

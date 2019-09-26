@@ -1,0 +1,38 @@
+// Theme everis
+.theme-everis {
+  $primary: #A4BD32;
+  $secondary: #002c76;
+  $lightblue: #5E55B0;
+  
+  @include setTheme(
+    $body-bg: #f9f7f4,
+    $body-color: $secondary,
+
+    $header-bg: $primary,
+    $header-color: white,
+
+    $title-primary: $primary,
+    $title-secondary: $lightblue,
+    $title-light: white,
+    $link: $secondary,
+    $label: $lightblue,
+
+    $button-primary: $lightblue,
+    $button-primary-color: white,
+    $button-secondary: $lightblue,
+    $button-secondary-color: white,
+    $button-success: $primary,
+    $button-success-color: white,
+    $button-info: $primary,
+    $button-info-color: white,
+    $button-outline: $secondary,
+    
+    $gradient-from: darken($primary, 10),
+    $gradient-to: lighten($primary, 10),
+
+    $footer-bg: #505050,
+    $footer-color: white,
+
+    $logo-height: 60px
+  )
+}

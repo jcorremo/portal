@@ -1,0 +1,38 @@
+// Theme Banco Bogotá
+.theme-banco-bogota {
+  $primary: #002c76;
+  $secondary: #FFB400;
+  $orange: #F07B05;
+  
+  @include setTheme(
+    $body-bg: #f9f7f4,
+    $body-color: $primary,
+
+    $header-bg: $primary,
+    $header-color: white,
+
+    $title-primary: $primary,
+    $title-secondary: $orange,
+    $title-light: white,
+    $link: $primary,
+    $label: $orange,
+
+    $button-primary: #FFB400,
+    $button-primary-color: $primary,
+    $button-secondary: #FFB400,
+    $button-secondary-color: $primary,
+    $button-success: $primary,
+    $button-success-color: white,
+    $button-info: #FFB400,
+    $button-info-color: $primary,
+    $button-outline: $primary,
+
+    $gradient-from: $primary,
+    $gradient-to: lighten($primary, 10),
+
+    $footer-bg: #435168,
+    $footer-color: white,
+
+    $logo-height: 40px
+  )
+}

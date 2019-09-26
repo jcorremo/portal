@@ -1,0 +1,18 @@
+<div class="card">
+  <div class="card-body total">
+    <div class="row m-0">
+      <div class="col p-0"><p class="m-0">Subtotal</p><span>({{items}} productos)</span></div>
+      <div class="col p-0 text-right"><b>{{subtotal | currency:'COP':'$':'1.0':'es-CO'}}</b></div>
+    </div>
+    <div class="row ml-0 mr-0 mt-3">
+      <div class="col p-0"><p class="m-0">Envío</p></div>
+      <div class="col p-0 text-right"><b>$12.000</b></div>
+    </div>
+    <div class="row ml-0 mr-0 mt-3 pt-3">
+      <div class="col p-0 text-right">
+        <p class="m-0">Total:</p>
+        <h4 class="m-0">{{total | currency:'COP':'$':'1.0':'es-CO'}}</h4>
+      </div>
+    </div>
+  </div>
+</div>

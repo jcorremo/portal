@@ -1,0 +1,89 @@
+################################# Deployment  
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: TEMPLATE_NAME
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: TEMPLATE_NAME
+      version: v1
+  template:
+    metadata:
+      annotations:
+        sidecar.istio.io/inject: "true"    
+      labels:
+        app: TEMPLATE_NAME
+        version: v1
+    spec:
+      containers:
+      - name: TEMPLATE_NAME
+        image: quay.az.rhcol.com/pocadmin/TEMPLATE_NAME:TAG
+        imagePullPolicy: Always
+        ports:
+        - containerPort: PORT
+        env: 
+        - name: LABEL
+          value: NUMBER  
+        readinessProbe:
+          tcpSocket:
+            port: PORT
+          initialDelaySeconds: 3
+          periodSeconds: 3
+          timeoutSeconds: 2
+          failureThreshold: 3
+          successThreshold: 1
+        livenessProbe:
+          tcpSocket:
+            port: PORT
+          initialDelaySeconds: 3
+          periodSeconds: 3
+          timeoutSeconds: 2
+          failureThreshold: 3
+          successThreshold: 1
+        resources:
+          limits:
+            cpu: 200m
+            memory: 64Mi
+          requests:
+            cpu: 100m
+            memory: 24Mi
+      imagePullSecrets:
+      - name: quaysecret       
+---
+################################# Service
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: TEMPLATE_NAME
+  name: TEMPLATE_NAME
+spec:
+  ports:
+  - port: PORT
+    name: http
+    protocol: TCP
+    targetPort: PORT
+  selector:
+    app: TEMPLATE_NAME
+  type: ClusterIP
+---
+kind: HorizontalPodAutoscaler
+apiVersion: autoscaling/v2beta1
+metadata:
+  name: TEMPLATE_NAME
+  labels:
+    app: TEMPLATE_NAME
+spec:
+  scaleTargetRef:
+    kind: Deployment
+    name: TEMPLATE_NAME
+    apiVersion: apps/v1
+  minReplicas: 3
+  maxReplicas: 5
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        targetAverageUtilization: 50

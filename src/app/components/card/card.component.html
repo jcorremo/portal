@@ -1,0 +1,12 @@
+<!-- Card -->
+<div class="card border-0">
+  <h4 class="card-header border-0 bg-transparent title-primary">{{product.description}}</h4>
+  <img
+    src={{product.image}}
+    alt=""
+    class="card-img rounded-0"
+  />
+  <div class="text-right p-3">
+    <a [routerLink]="[product?.categoryURL]" class="link">Ver más</a>
+  </div>
+</div>

@@ -1,0 +1,77 @@
+<!-- Navbar Mobile -->
+<nav class="navbar p-0 d-lg-none bg-primary">
+  <div class="container">
+    <a routerLink="/" class="navbar-brand">
+      <img *ngIf="src" [src]="src" [alt]="alt" height="40" />
+    </a>
+    <button id="toggleButton" type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarToggler"
+      aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <img src="../../../assets/menu.svg" alt="Menú" width="30">
+    </button>
+    <div id="navbarToggler" class="collapse navbar-collapse">
+      <form class="form-group mb-0" (submit)="onSubmit(searchMobile?.value, $event)" #searchMobile="ngForm">
+        <input
+          #searchMobile
+          id="search"
+          name="search"
+          class="form-control rounded"
+          type="search"
+          placeholder="Buscar producto"
+          aria-label="Search"
+          [(ngModel)]="search"
+          autocomplete="off"
+        />
+      </form>
+      <ul class="menu-mobile text-center">
+        <li>{{user?.username}}</li>
+        <li><a routerLink="/cart">Carrito</a></li>
+        <li><a href="#" (click)="logOut($event)">Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Navbar -->
+<nav class="navbar bg-primary d-none d-lg-flex p-0">
+  <div class="container">
+    <a routerLink="/" class="navbar-brand logo-web">
+      <img *ngIf="src" [src]="src" [alt]="alt" height="62" />
+    </a>
+    <form class="form-inline flex-grow-1" (submit)="onSubmit(searchProduct.value, $event)" #searchForm="ngForm">
+      <select class="form-control border-0 rounded-0" id="search" name="search" [(ngModel)]="url">
+        <option value="" disabled>Todas las categorias</option>
+        <option *ngFor="let category of categories" [ngValue]="category.url">{{category?.name}}</option>
+      </select>
+      <input
+        #searchProduct
+        id="search"
+        name="search"
+        class="form-control flex-grow-1 border-0 rounded-0"
+        type="search"
+        placeholder="Buscar producto"
+        aria-label="Search"
+        [(ngModel)]="search"
+      />
+    </form>
+    <div class="dropdown ml-3">
+      <a href="#" class="dropdown-toggle" id="userDropdown" role="button" data-toggle="dropdown">
+        <!-- <img src="../../assets/icon-profile.svg" alt="Profile" height="30" /> -->
+        <div class="icon">
+          <i class="icon-icon-profile"></i>
+        </div>
+        <p>Perfil</p>
+      </a>
+      <div class="dropdown-menu bg-primary" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item">{{user?.username}}</a>
+        <a class="dropdown-item" href="#" (click)="logOut($event)">Logout</a>
+      </div>
+    </div>
+    <a routerLink="/cart" class="ml-3">
+      <!-- <img src="../../assets/icon-cart.svg" alt="Cart" height="30" /> -->
+      <div class="icon">
+        <i class="icon-icon-cart"></i>
+      </div>
+      <p>Carrito</p>
+    </a>
+  </div>
+</nav>

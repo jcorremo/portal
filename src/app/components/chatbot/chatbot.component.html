@@ -1,0 +1,6 @@
+<div class="chatbot">
+  <div *ngIf="showChat" class="chatbot-body">
+      <iframe src="http://storage.googleapis.com/producto-digital-chatbot/www/index.html#/productodigital" frameborder="0"></iframe>
+  </div>
+  <button class="btn btn-info" (click)="toggleChat()"><fa-icon [icon]="icon"></fa-icon> {{ label }}</button>
+</div>

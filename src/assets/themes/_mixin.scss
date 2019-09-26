@@ -1,0 +1,94 @@
+// Required
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins";
+
+// Optional
+@import "node_modules/bootstrap/scss/buttons";
+
+@mixin setTheme(
+  $body-bg,
+  $body-color,
+  
+  $header-bg,
+  $header-color,
+
+  $title-primary,
+  $title-secondary,
+  $title-light,
+  $link,
+  $label,
+
+  $button-primary,
+  $button-primary-color,
+  $button-secondary,
+  $button-secondary-color,
+  $button-success,
+  $button-success-color,
+  $button-info,
+  $button-info-color,
+  $button-outline,
+
+  $gradient-from,
+  $gradient-to,
+
+  $footer-bg,
+  $footer-color,
+
+  $logo-height
+) {
+  background: $body-bg;
+  color: $body-color;
+  .navbar,
+  .navbar .dropdown-menu {
+    background: $header-bg !important;
+    color: $header-color;
+  }
+  .carousel-control-next-icon,
+  .carousel-control-prev-icon { color: $body-color }
+  .title-primary { color: $title-primary }
+  .title-secondary { color: $title-secondary }
+  .title-light { color: $title-light }
+  .link { color: $link }
+  .label { color: $label }
+  .label-dark { color: darken($label, 10) }
+  .btn-primary {
+    @include button-variant($button-primary, $button-primary);
+    color: $button-primary-color;
+    font-weight: bold;
+  }
+  .btn-secondary {
+    @include button-variant($button-secondary, $button-secondary);
+    color: $button-secondary-color;
+    font-weight: bold;
+  }
+  .btn-success {
+    @include button-variant($button-success, $button-success);
+    color: $button-success-color;
+    font-weight: bold;
+  }
+  .btn-info {
+    @include button-variant($button-info, $button-info);
+    color: $button-info-color;
+    font-weight: bold;
+  }
+  .btn-outline-primary { @include button-outline-variant($button-outline) }
+  .bg-gradient { background: linear-gradient(180deg, $gradient-from 0%, $gradient-to 100%) }
+  .prefooter {
+    color: $body-color;
+  }
+  .footer {
+    background: $footer-bg;
+    color: $footer-color;
+  }
+  .logos img,
+  .logo-web img {
+    height: $logo-height;
+  }
+  .footer img {
+    height: $logo-height * 0.75;
+  }
+  select.form-control {
+    color: $body-color !important;
+  }
+}

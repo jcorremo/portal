@@ -1,0 +1,39 @@
+// Theme Claro
+.theme-claro {
+  $primary: #EF3829;
+  $secondary: #1F97AE;
+
+  $cardinal: #B7202E;
+
+  @include setTheme(
+    $body-bg: #fafafa,
+    $body-color: #333,
+
+    $header-bg: $primary,
+    $header-color: white,
+
+    $title-primary: $primary,
+    $title-secondary: $cardinal,
+    $title-light: white,
+    $link: $secondary,
+    $label: $cardinal,
+
+    $button-primary: $secondary,
+    $button-primary-color: white,
+    $button-secondary: $white,
+    $button-secondary-color: $primary,
+    $button-outline: $secondary,
+    $button-success: $primary,
+    $button-success-color: white,
+    $button-info: $secondary,
+    $button-info-color: white,
+    
+    $gradient-from: $cardinal,
+    $gradient-to: lighten($cardinal, 10),
+
+    $footer-bg: #000104,
+    $footer-color: white,
+
+    $logo-height: 30px
+  )
+}

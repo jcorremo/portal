@@ -1,0 +1,30 @@
+<app-carousel></app-carousel>
+<!-- Cards -->
+<div class="container mt-n5 mb-lg-4">
+  <div class="row">
+    <div *ngFor="let category of firstCards" class="col-sm-6 col-lg-4 mb-3 mb-lg-0 f1">
+      <app-card [product]="category"></app-card>
+    </div>
+  </div>
+</div>
+
+<!-- Img Carousel -->
+<div class="container mb-4">
+  <app-images-carousel id="carousel1"></app-images-carousel>
+</div>
+
+<!-- Cards Horizontal -->
+<div class="container mb-4">
+  <div class="row">
+    <div *ngFor="let category of secondCards" class="col-md-6 f2">
+        <app-card-horizontal [product]=category></app-card-horizontal>
+    </div>
+  </div>
+</div>
+
+<!-- Categorías -->
+<div class="container">
+  <app-card-category></app-card-category>
+</div>
+<!-- Prefooter -->
+<app-prefooter><app-prefooter>

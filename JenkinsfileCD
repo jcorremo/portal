@@ -1,0 +1,72 @@
+pipeline {
+    agent { 
+        label 'jenkins-slave-image-mgmt'
+    }
+
+ environment {
+  DEV_PROJECT = "prod-application"
+  TEMPLATE_NAME = "portal"
+  PORT = "8080"
+  TAG = "prod";
+ }
+
+ stages {
+ 
+ 	stage('Scan Quay'){
+		steps{
+			script{
+			sh "curl -X GET -k -H 'Authorization: Bearer Z5asL2TVPP6dtBFxu5kh5UtsPhCInbDZ7J7NkRdj' -H 'Content-Type: application/json' -H 'Accept: application/json' 'https://quay.az.rhcol.com/api/v1/repository/pocadmin/${TEMPLATE_NAME}/tag/?onlyActiveTags=true&specificTag=${TAG}' >/tmp/respuestaGetTag.json"
+				
+            def respuestaGetTag = readJSON file: '/tmp/respuestaGetTag.json'
+            def imageID = respuestaGetTag.tags[0].image_id
+			
+            sh "curl -X GET -k  -H 'Authorization: Bearer Z5asL2TVPP6dtBFxu5kh5UtsPhCInbDZ7J7NkRdj' -H 'Content-Type: application/json' -H 'Accept: application/json' 'https://quay.az.rhcol.com/api/v1/repository/pocadmin/${TEMPLATE_NAME}/image/${imageID}/security?vulnerabilities=true' >/tmp/respuestaGetSecScan.json"
+			
+			TOTAL = sh (
+				script: 'grep -E \'"Severity"\\s*:\\s*"[High|Critical]+"\' -o /tmp/respuestaGetSecScan.json | wc -l',
+				returnStdout: true
+			).trim()
+			}
+		}
+	}
+	
+	stage('Check Results') {
+		steps {
+			timeout(time: 50, unit: "MINUTES") {
+				script {
+					if ("${TOTAL}" > 0){
+						print "La imagen cuenta con ${TOTAL} vulnerabilidades, desea pasar a produccion?"
+						input message: "Promover a produccion?", ok: "Promover"
+					} else {
+						print "La imagen esta limpia de vulnerabilidades"
+					}
+				}
+			}
+		}
+	}
+
+ 
+ 
+	stage('Configure APP'){
+		steps{
+			sh """
+			sed -i "s/TEMPLATE_NAME/${TEMPLATE_NAME}/g" openshift/Deployment.yaml
+			sed -i "s/PORT/${PORT}/g" openshift/Deployment.yaml
+			sed -i "s/TAG/${TAG}/g" openshift/Deployment.yaml
+			sed -i "s/NUMBER/${BUILD_NUMBER}-vn/g" openshift/Deployment.yaml
+			"""
+		}
+	}
+ 
+  stage('Deploy To Dev') {
+   steps {
+	sh "oc login -u pocadmin -p r3dh4t1! --insecure-skip-tls-verify https://masterpoc.az.rhcol.com"
+	sh "oc project ${DEV_PROJECT}"
+	sh "oc apply -f openshift/Deployment.yaml --force"
+   }
+  }
+  
+ }
+}
+
+

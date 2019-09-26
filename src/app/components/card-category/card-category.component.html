@@ -1,0 +1,16 @@
+<div class="card border-0">
+  <h3 class="card-header bg-transparent border-0 pb-0 title-primary">Categorías</h3>
+  <div class="card-body pl-5 pr-5">
+    <div class="row mb-3">
+      <ng-template ngFor let-category let-i="index" [ngForOf]="categories">
+        <div *ngIf="i !== 0 && i % 4 === 0" class="w-100"></div>
+        <div class="col-6 col-md-3">
+          <a [routerLink]="['/', category.url]" class="pt-3 pb-3 font-weight-light text-center link">
+            <img src="{{category.image}}" alt="" class="card-img" />
+            {{category.name}}
+          </a>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+</div>

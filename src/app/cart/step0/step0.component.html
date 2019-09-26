@@ -1,0 +1,50 @@
+<h5 class="mt-3 mb-3 label-dark">Carrito</h5>
+<div class="row mb-3" *ngIf="items?.length">
+  <div class="col-lg-9">
+    <div class="card mb-2 fz-12 d-none d-md-block">
+      <div class="row m-0 p-2 label">
+        <div class="col-7">Artículo</div>
+        <div class="col-3 text-left">Precio</div>
+        <div class="col-2 text-right">Cantidad</div>
+      </div>
+    </div>
+    <!-- Listado -->
+    <ul class="list-unstyled mb-2">
+      <li *ngFor="let item of items; let i = index" class="mb-2">
+        <app-cart-product [product]="item" [index]="i"></app-cart-product>
+      </li>
+    </ul>
+    <!-- Total -->
+    <div class="card subtotal mb-2 mb-lg-0">
+      <div class="row m-0 p-2">
+        <div class="col text-right label-dark">Subtotal ({{items.length}} productos) {{total | currency:'COP':'$':'1.0':'es-CO'}}</div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-3">
+    <div class="card">
+      <div class="card-body text-right card-subtotal">
+        <b>Subtotal ({{items.length}} productos)</b>
+        <h3 class="mt-2 mb-4">{{total | currency:'COP':'$':'1.0':'es-CO'}}</h3>
+        <a *ngIf="total > 0" routerLink="step-1" class="btn btn-block btn-success">Pagar</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card noitems mb-3" *ngIf="!items?.length">
+  <div class="card-body p-5">No tiene artículos en el carro de compras</div>
+</div>
+
+<!-- Carousel -->
+<app-images-carousel></app-images-carousel>
+
+<!-- Cards Horizontal -->
+<div *ngIf="categoria1.length !== 0" class="row mb-3">
+  <div class="col-md-6 f2">
+      <app-card-horizontal [product]=categoria1[0]></app-card-horizontal>
+  </div>
+  <div class="col-md-6 f2">
+      <app-card-horizontal [product]=categoria1[1]></app-card-horizontal>
+  </div>
+</div>

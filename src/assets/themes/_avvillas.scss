@@ -1,0 +1,38 @@
+// Theme AV Villas
+.theme-av-villas {
+  $primary: #e2001a;
+  $secondary: #1B58A8;
+  $lightblue: #5E55B0;
+  
+  @include setTheme(
+    $body-bg: #f9f7f4,
+    $body-color: #000000,
+
+    $header-bg: $primary,
+    $header-color: white,
+
+    $title-primary: $primary,
+    $title-secondary: $lightblue,
+    $title-light: white,
+    $link: $secondary,
+    $label: $lightblue,
+
+    $button-primary: $secondary,
+    $button-primary-color: white,
+    $button-secondary: white,
+    $button-secondary-color: $primary,
+    $button-success: $primary,
+    $button-success-color: white,
+    $button-info: $secondary,
+    $button-info-color: white,
+    $button-outline: $secondary,
+    
+    $gradient-from: $primary,
+    $gradient-to: lighten($primary, 10),
+
+    $footer-bg: #383d43,
+    $footer-color: white,
+
+    $logo-height: 32px
+  )
+}

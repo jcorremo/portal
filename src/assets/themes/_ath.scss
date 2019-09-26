@@ -1,0 +1,38 @@
+// Theme ATH
+.theme-ath {
+  $primary: #0177B5;
+  $secondary: #00356F;
+  $text: #333333;
+  
+  @include setTheme(
+    $body-bg: #f8f8f8,
+    $body-color: $text,
+
+    $header-bg: white,
+    $header-color:$text,
+
+    $title-primary: $primary,
+    $title-secondary: $primary,
+    $title-light: white,
+    $link: $text,
+    $label: $primary,
+
+    $button-primary: $primary,
+    $button-primary-color: white,
+    $button-secondary: $primary,
+    $button-secondary-color: white,
+    $button-success: $secondary,
+    $button-success-color: white,
+    $button-info: $secondary,
+    $button-info-color: white,
+    $button-outline: $primary,
+    
+    $gradient-from: darken($secondary, 10),
+    $gradient-to: lighten($secondary, 10),
+
+    $footer-bg: white,
+    $footer-color: $text,
+
+    $logo-height: 48px
+  );
+}

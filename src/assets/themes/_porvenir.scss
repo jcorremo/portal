@@ -1,0 +1,48 @@
+// Theme Porvenir
+.theme-porvenir {
+  $primary: #f2b63c;
+  $secondary: #e56649;
+
+  $green: #87ab43;
+  $orange: #ff9933;
+  
+  @include setTheme(
+    $body-bg: #edeeee,
+    $body-color: #666666,
+
+    $header-bg: $primary,
+    $header-color: white,
+
+    $title-primary: $green,
+    $title-secondary: $green,
+    $title-light: white,
+    $link: $orange,
+    $label: $green,
+
+    $button-primary: $secondary,
+    $button-primary-color: white,
+    $button-secondary: $primary,
+    $button-secondary-color: white,
+    $button-success: $secondary,
+    $button-success-color: white,
+    $button-info: $secondary,
+    $button-info-color: white,
+    $button-outline: $green,
+    
+    $gradient-from: darken($green, 10),
+    $gradient-to: lighten($green, 10),
+
+    $footer-bg: #e1e2e2,
+    $footer-color: $green,
+
+    $logo-height: 62px
+  );
+  // Custom
+  .navbar-brand.logo-web {
+    padding: 5px;
+    background: white;
+  }
+  .prefooter {
+    color: $green;
+  }
+}

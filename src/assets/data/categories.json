@@ -1,0 +1,34 @@
+[
+  {
+    "name": "Audífonos",
+    "image": "/assets/home/cat2.png"
+  },
+  {
+    "name": "Camaras",
+    "image": "/assets/home/cam3.png"
+  },
+  {
+    "name": "Consolas",
+    "image": "/assets/home/cat4.png"
+  },
+  {
+    "name": "Drones",
+    "image": "/assets/home/cat5.png"
+  },
+  {
+    "name": "Echo Dot",
+    "image": "/assets/home/cat9.png"
+  },
+  {
+    "name": "Gafas de RA",
+    "image": "/assets/home/cat7.png"
+  },
+  {
+    "name": "Relojes Inteligentes",
+    "image": "/assets/home/cat1.png"
+  },
+  {
+    "name": "TV Box",
+    "image": "/assets/home/cat8.png"
+  }
+]
